@@ -262,6 +262,11 @@ button {
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .nav-toggle span {
@@ -950,19 +955,24 @@ button {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
+    display: none; /* Caché par défaut sur mobile */
   }
 
   .nav-menu.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+    display: flex; /* Affiché quand actif */
   }
 
   .nav-toggle {
-    display: flex;
+    display: flex !important;
     flex-shrink: 0;
     z-index: 1001;
-    position: relative;
+    position: absolute;
+    right: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .nav-left {
@@ -987,9 +997,11 @@ button {
   /* S'assurer que le burger menu reste visible */
   .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
+    position: relative;
+    padding-right: 60px; /* Espace pour le burger */
   }
 
   .nav-social-link {
@@ -1295,6 +1307,14 @@ button {
     min-width: 36px;
     min-height: 36px;
     padding: 8px;
+    position: absolute !important;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-container {
+    padding-right: 50px; /* Plus d'espace sur très petits écrans */
   }
 
   .nav-toggle span {
