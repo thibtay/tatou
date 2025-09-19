@@ -904,6 +904,24 @@ button {
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* Breakpoints pour une meilleure granularité */
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: var(--space-xl);
+  }
+
+  .about-content,
+  .salon-content,
+  .contact-content {
+    gap: var(--space-xl);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
@@ -1001,8 +1019,45 @@ button {
 
   .hero-cta {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
   }
 
+  .hero-signature {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* Sections responsive */
+  .section-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .about-text,
+  .salon-text {
+    text-align: left;
+  }
+
+  .about-text .lead,
+  .salon-text .lead {
+    font-size: 1.1rem;
+  }
+
+  .specialties {
+    justify-content: center;
+  }
+
+  .feature-item {
+    text-align: left;
+  }
+
+  /* Footer responsive */
   .footer-content {
     flex-direction: column;
     gap: var(--space-lg);
@@ -1042,10 +1097,88 @@ button {
 
   .btn {
     width: 100%;
-    max-width: 280px;
+    text-align: center;
+  }
+
+  /* Contact form mobile optimisations */
+  .contact-form h3 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Évite le zoom sur iOS */
+    padding: var(--space-lg);
+  }
+
+  .form-group textarea {
+    min-height: 120px;
+  }
+
+  .contact-info .info-item {
+    text-align: center;
+    padding: var(--space-md);
+  }
+
+  .maps-link {
+    justify-content: center;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .hero-signature {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 
   .container {
     padding: 0 var(--space-sm);
+  }
+
+  /* Optimisation images mobile */
+  .hero-logo img,
+  .portfolio-item img,
+  .salon-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .portfolio-item img {
+    aspect-ratio: 1;
+  }
+
+  .salon-image img {
+    aspect-ratio: 16/10;
+  }
+
+  .hero-logo {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  /* Touch-friendly optimizations */
+  .portfolio-filters button,
+  .btn {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  .portfolio-item {
+    touch-action: manipulation;
+  }
+
+  .nav-menu a {
+    padding: var(--space-md) var(--space-lg);
+    display: block;
+    text-align: center;
   }
 }
