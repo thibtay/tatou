@@ -923,6 +923,10 @@ button {
 }
 
 @media (max-width: 768px) {
+  .nav-container {
+    padding: 0 var(--space-md);
+  }
+
   .nav-menu {
     position: fixed;
     top: 100%;
@@ -948,14 +952,35 @@ button {
 
   .nav-toggle {
     display: flex;
+    flex-shrink: 0;
+    z-index: 1001;
+    position: relative;
   }
 
   .nav-left {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
     gap: var(--space-md);
   }
 
   .nav-social {
     gap: var(--space-xs);
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* S'assurer que le burger menu reste visible */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   .nav-social-link {
@@ -1082,6 +1107,28 @@ button {
 }
 
 @media (max-width: 480px) {
+  .nav-container {
+    padding: 0 var(--space-sm);
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .nav-social-link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-social-link svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-toggle {
+    padding: var(--space-xs);
+  }
+
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
