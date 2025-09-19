@@ -214,6 +214,14 @@ button {
   background-clip: text;
 }
 
+.logo-full {
+  display: inline;
+}
+
+.logo-short {
+  display: none;
+}
+
 .nav-menu {
   display: flex;
   list-style: none;
@@ -971,6 +979,7 @@ button {
   .logo-text {
     font-size: 1.2rem;
     white-space: nowrap;
+    max-width: 160px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -1112,7 +1121,16 @@ button {
   }
 
   .logo-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    max-width: 120px;
+  }
+
+  .nav-left {
+    gap: var(--space-sm);
+  }
+
+  .nav-social {
+    gap: 4px;
   }
 
   .nav-social-link {
@@ -1126,7 +1144,21 @@ button {
   }
 
   .nav-toggle {
-    padding: var(--space-xs);
+    padding: var(--space-sm);
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    min-width: 40px;
+    min-height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-toggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--color-coral);
   }
 
   .portfolio-grid {
@@ -1227,5 +1259,54 @@ button {
     padding: var(--space-md) var(--space-lg);
     display: block;
     text-align: center;
+  }
+}
+
+/* Optimisation spéciale pour très petits écrans Android */
+@media (max-width: 360px) {
+  .nav-container {
+    padding: 0 8px;
+  }
+
+  .logo-text {
+    font-size: 0.8rem;
+    max-width: 100px;
+  }
+
+  .nav-left {
+    gap: 8px;
+  }
+
+  .nav-social {
+    gap: 2px;
+  }
+
+  .nav-social-link {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-social-link svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-toggle {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 8px;
+  }
+
+  .nav-toggle span {
+    width: 18px;
+    height: 2px;
+  }
+
+  .logo-full {
+    display: none;
+  }
+
+  .logo-short {
+    display: inline;
   }
 }
