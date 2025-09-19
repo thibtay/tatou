@@ -911,6 +911,21 @@ button {
 
 /* ===== RESPONSIVE ===== */
 
+/* Prévention débordement global */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Breakpoints pour une meilleure granularité */
 @media (max-width: 1024px) {
   .hero-content {
@@ -930,11 +945,14 @@ button {
 
 @media (max-width: 768px) {
   .nav-container {
-    padding: 0 var(--space-md);
+    padding: 0 var(--space-sm);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
   .nav-menu {
@@ -983,20 +1001,31 @@ button {
   .nav-left {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-sm);
     flex: 1;
     min-width: 0;
+    overflow: hidden;
+    max-width: calc(100% - 50px); /* Espace pour le burger */
   }
 
   .nav-social {
-    gap: var(--space-xs);
+    gap: 4px;
     flex-shrink: 0;
+    display: flex;
+  }
+
+  .nav-logo {
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .logo-text {
-    font-size: 1.1rem;
-    flex-shrink: 1;
-    min-width: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .nav-social-link {
@@ -1063,6 +1092,8 @@ button {
     flex-direction: column;
     align-items: center;
     gap: var(--space-md);
+    width: 100%;
+    max-width: 100%;
   }
 
   .hero-signature {
@@ -1115,6 +1146,9 @@ button {
 
   .container {
     padding: 0 var(--space-md);
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   :root {
@@ -1124,19 +1158,24 @@ button {
 
 @media (max-width: 480px) {
   .nav-container {
-    padding: 0 var(--space-sm);
-  }
-
-  .logo-text {
-    font-size: 0.85rem;
+    padding: 0 8px;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .nav-left {
-    gap: var(--space-sm);
+    gap: 6px;
+    max-width: calc(100% - 40px); /* Espace pour le burger plus petit */
+  }
+
+  .logo-text {
+    font-size: 0.8rem;
+    max-width: 120px;
   }
 
   .nav-social {
-    gap: 4px;
+    gap: 2px;
   }
 
   .nav-social-link {
@@ -1228,6 +1267,9 @@ button {
 
   .container {
     padding: 0 var(--space-sm);
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   /* Optimisation images mobile */
