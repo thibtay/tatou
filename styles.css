@@ -1299,11 +1299,13 @@ body.menu-open {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    color: var(--color-white) !important;
+    color: var(--color-coral) !important;
     background: var(--gradient-coral) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
+    font-family: var(--font-script) !important;
+    font-weight: 700 !important;
   }
 
   .hero-text {
@@ -1360,6 +1362,16 @@ body.menu-open {
     hyphens: auto;
     max-width: 100%;
     text-align: center;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: var(--color-coral) !important;
+    background: var(--gradient-coral) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-family: var(--font-script) !important;
+    font-weight: 700 !important;
   }
 
   .hero-subtitle {
