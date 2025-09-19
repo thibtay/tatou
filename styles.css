@@ -931,76 +931,72 @@ button {
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   .nav-menu {
+    display: none !important;
+  }
+
+  .nav-menu.active {
+    display: flex !important;
     position: fixed;
-    top: 100%;
+    top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: center;
-    padding: var(--space-xl) 0;
-    gap: var(--space-lg);
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    display: none; /* Caché par défaut sur mobile */
-  }
-
-  .nav-menu.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-    display: flex; /* Affiché quand actif */
+    justify-content: center;
+    gap: var(--space-xl);
+    z-index: 1000;
   }
 
   .nav-toggle {
     display: flex !important;
-    flex-shrink: 0;
+    position: relative !important;
     z-index: 1001;
-    position: fixed;
-    right: var(--space-md);
-    top: var(--space-md);
-    background: rgba(255, 107, 107, 0.2);
-    border: 2px solid var(--color-coral);
-    border-radius: var(--border-radius);
-    padding: var(--space-sm);
-    width: 44px;
-    height: 44px;
+    background: var(--color-coral);
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .nav-toggle span {
+    width: 20px;
+    height: 2px;
+    background: #000000;
+    display: block;
   }
 
   .nav-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
     flex: 1;
     min-width: 0;
-    overflow: hidden;
-    gap: var(--space-md);
   }
 
   .nav-social {
     gap: var(--space-xs);
+    flex-shrink: 0;
   }
 
   .logo-text {
-    font-size: 1.2rem;
-    white-space: nowrap;
-    max-width: 160px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  /* S'assurer que le burger menu reste visible */
-  .nav-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    position: relative;
+    font-size: 1.1rem;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .nav-social-link {
@@ -1132,8 +1128,7 @@ button {
   }
 
   .logo-text {
-    font-size: 0.9rem;
-    max-width: 120px;
+    font-size: 0.85rem;
   }
 
   .nav-left {
@@ -1218,7 +1213,9 @@ button {
   }
 
   .hero-signature {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-top: var(--space-lg);
   }
 
   .hero-subtitle {
@@ -1303,14 +1300,9 @@ button {
   }
 
   .nav-toggle {
-    position: fixed !important;
-    right: 8px;
-    top: 8px;
-    width: 40px !important;
-    height: 40px !important;
-    min-width: 40px;
-    min-height: 40px;
-    padding: 8px;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px;
   }
 
 
