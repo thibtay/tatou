@@ -917,6 +917,14 @@ html, body {
   max-width: 100vw;
 }
 
+/* Empêcher le scroll quand le menu est ouvert */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -966,8 +974,8 @@ html, body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.98);
-    backdrop-filter: blur(20px);
+    background: #000000;
+    backdrop-filter: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -976,26 +984,34 @@ html, body {
     margin: 0;
     padding: var(--space-xl);
     list-style: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .nav-menu.active .nav-link {
-    color: var(--color-white);
-    font-size: 1.5rem;
-    font-weight: 500;
+    color: #ffffff !important;
+    font-size: 1.8rem;
+    font-weight: 600;
     text-decoration: none;
-    padding: var(--space-md);
+    padding: var(--space-lg);
     border-radius: var(--border-radius);
     transition: var(--transition);
     text-align: center;
     display: block;
     width: 100%;
     max-width: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: var(--space-xs) 0;
   }
 
   .nav-menu.active .nav-link:hover,
   .nav-menu.active .nav-link.active {
-    background: rgba(255, 107, 107, 0.2);
-    color: var(--color-coral);
+    background: var(--color-coral);
+    color: #000000 !important;
+    transform: scale(1.05);
+    border-color: var(--color-coral);
   }
 
   /* Animation du burger menu quand ouvert */
@@ -1138,6 +1154,9 @@ html, body {
     overflow-wrap: break-word;
     hyphens: auto;
     max-width: 100%;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .hero-subtitle {
@@ -1260,12 +1279,29 @@ html, body {
   }
 
   .hero-signature {
-    font-size: 1.8rem !important;
-    line-height: 1.1;
+    font-size: 2.2rem !important;
+    line-height: 1.2;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: var(--color-white) !important;
+    background: var(--gradient-coral) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
   }
 
   .hero-text {
     padding: 0 var(--space-sm);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .hero-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .btn {
